@@ -1,0 +1,138 @@
+@import '../common/styles/variables';
+
+& {
+  :host {
+    display: inline-block;
+  }
+
+  .dp-day-calendar-container {
+    background: @c-white;
+  }
+
+  .dp-calendar-wrapper {
+    box-sizing: border-box;
+    padding: 10px;
+    // border: 1px solid @c-black;
+
+    .dp-calendar-weekday:first-child {
+      border-left: none;
+    }
+  }
+
+  .dp-weekdays {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .dp-calendar-weekday {
+    box-sizing: border-box;
+    display: inline-block;
+    width: @basic-height;
+    text-align: center;
+    font-weight: 700;
+    // border-left: 1px solid @c-black;
+    // border-bottom: 1px solid @c-black;
+  }
+
+  .dp-calendar-day {
+    box-sizing: border-box;
+    width: @basic-height;
+    height: @basic-height;
+    cursor: pointer;
+    border: none;
+    background: none;
+    &:hover {
+      background: #7ED321;
+      color: white;
+      border-radius: 50%;
+    }
+  }
+
+  .dp-calendar-day-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .dp-selected {
+    background: @c-primary;
+    color: @c-white;
+    border-radius: 50%;
+  }
+
+  .dp-prev-month, .dp-next-month {
+    opacity: 0.5;
+  }
+
+  .dp-hide-near-month {
+    .dp-prev-month, .dp-next-month {
+      visibility: hidden;
+    }
+  }
+
+  .dp-week-number {
+    position: absolute;
+    font-size: 9px;
+  }
+
+
+
+  .saturdays {
+    // color: #7ED321;
+    font-style: italic;
+    font-weight: 800;
+    &:hover {
+      color: white;
+    }
+  }
+  .dp-current-day {
+    border: 1px solid @c-primary;
+    border-radius: 50%;
+    // color: white;
+    }
+  :host.dp-material {
+
+    .dp-calendar-weekday {
+      height: @basic-height - 5px;
+      width: @basic-height;
+      line-height: @basic-height - 5px;
+      color: darken(@c-light-gray, 40%);
+      border: none;
+    }
+
+    .dp-calendar-wrapper {
+      // border: 1px solid @c-light-gray;
+    }
+
+    .dp-calendar-month,
+    .dp-calendar-day {
+      box-sizing: border-box;
+      background: @c-white;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      background: none;
+      &:hover {
+        background: @c-primary;
+      }
+    }
+
+    .dp-selected {
+      background: @c-primary;
+      color: @c-white;
+
+      &:hover {
+        background: @c-primary;
+      }
+    }
+
+    .dp-current-day {
+      border: 1px solid @c-primary;
+    border-radius: 50%;
+    background: #7ed321;
+    color: white;
+    }
+  }
+   button[disabled] {
+    color:#c5c5c5;
+  }
+}
